@@ -1,5 +1,6 @@
 package com.jtspringproject.JtSpringProject.controller;
 
+import com.jtspringproject.JtSpringProject.JtSpringProjectApplication;
 import com.jtspringproject.JtSpringProject.models.Cart;
 import com.jtspringproject.JtSpringProject.models.Product;
 import com.jtspringproject.JtSpringProject.models.User;
@@ -16,6 +17,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import com.jtspringproject.JtSpringProject.services.cartService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -32,7 +35,7 @@ public class UserController{
 
 	private final userService userService;
 	private final productService productService;
-
+	private static final Logger logger = LogManager.getLogger(UserController.class);
 	@Autowired
 	public UserController(userService userService, productService productService) {
 		this.userService = userService;
@@ -42,6 +45,7 @@ public class UserController{
 	@GetMapping("/register")
 	public String registerUser()
 	{
+
 		return "register";
 	}
 
