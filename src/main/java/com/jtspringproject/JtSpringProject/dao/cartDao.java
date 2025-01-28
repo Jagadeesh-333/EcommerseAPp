@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-public class cartDao {
+public class  cartDao {
     @Autowired
     private SessionFactory sessionFactory;
 
